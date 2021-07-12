@@ -1,14 +1,17 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace User
+namespace Data
 {
-    class Usuario
+    public class Usuario
     {
         //encapulamento - propriedades
-        private string Nome { get; set; }
-        private string Sobrenome { get; set; }
-        private string Email { get; set; }
-        private int Idade { get; set; }
+        [Key]
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Sobrenome { get; set; }
+        public string Email { get; set; }
+        public int Idade { get; set; }
 
         public string Endereco { get; set; }
 
@@ -20,6 +23,11 @@ namespace User
             this.Email = email;
             this.Endereco = endereco;
             this.Idade = idade;
+
+        }
+        public Usuario()
+        {
+
         }
     }
 }

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Main
+namespace ConsoleApp2
 {
-    class Main
+    class Program
     {
-        public static void main(String[] args)
+        static void Main(string[] args) 
         {
-         
+            
         }
     }
 }
