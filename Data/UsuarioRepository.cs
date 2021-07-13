@@ -6,32 +6,52 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class UsuarioRepository
+    public class UsuarioRepository
     {
         //Create
-        public void create()
+        public void Create(Usuario model)
         {
-
+            using (HavanLabsContext context = new HavanLabsContext())
+            {
+                context.Usuarios.Add(model);
+                context.SaveChanges();
+            }
         }
         //ReadAll
-        public void ReadAll()
+        public List<Usuario> ReadAll()
         {
-
+            using (HavanLabsContext context = new HavanLabsContext())
+            {
+                return context.Usuarios.ToList();
+            }
         }
         //ReadById
-        public void ReadById()
+        public Usuario ReadById (int id)
         {
-
+            using (HavanLabsContext context = new HavanLabsContext())
+            {
+                return context.Usuarios.Find(id);
+            }
         }
         //Update
-        public void Update()
+        public void Update(Usuario model)
         {
-
+            using (HavanLabsContext context = new HavanLabsContext())
+            {
+                context.Entry(model).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+            }
         }
         //Delete
-        public void Delete()
+        public void Delete(int id)
         {
+            using (HavanLabsContext context = new HavanLabsContext())
 
+            {
+                Usuario model = context.Usuarios.Find(id);
+                context.Usuarios.Remove(model);
+                context.SaveChanges();
+            }
         }
     }
 }
