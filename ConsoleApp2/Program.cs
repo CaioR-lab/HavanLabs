@@ -8,9 +8,14 @@ namespace ConsoleApp2
 {
     class Program
     {
-        static void Main(string[] args) 
+        static void Main(string[] args)
         {
-            
+            //Aula1.Executar();
+            //Ex1.CadastroUsuario();
+            Menu.MontaMenu();
+            Console.WriteLine("Saindo.... Precione qualquer tecla para fechar");
+
+            Console.ReadLine();
         }
     }
 }
